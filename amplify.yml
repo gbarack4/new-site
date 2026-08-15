@@ -11,8 +11,8 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    # Static export output (next.config output: "export")
-    baseDirectory: out
+    # Required for Amplify Next.js (WEB_COMPUTE) apps
+    baseDirectory: .next
     files:
       - "**/*"
   cache:
