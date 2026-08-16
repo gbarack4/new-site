@@ -16,6 +16,7 @@ export default function PricingPage() {
           DriveInstructor<span>Pro</span>
         </a>
         <nav>
+          <a href="/">Home</a>
           <a href="/#features">Features</a>
           <a href="/#how">How it works</a>
           <a href="/pricing">Pricing</a>
