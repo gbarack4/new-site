@@ -198,7 +198,7 @@ export default function PricingClient() {
             Add instructors beyond your plan allowance for A$15 per instructor per month or A$150
             per instructor per year.
           </p>
-          <a href="#">Contact us</a>
+          <a href="/contact">Contact us</a>
           <span> for schools with more than 25 instructors.</span>
         </div>
       </section>

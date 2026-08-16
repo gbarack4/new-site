@@ -19,7 +19,7 @@ export default function PricingPage() {
           <a href="/#features">Features</a>
           <a href="/#how">How it works</a>
           <a href="/pricing">Pricing</a>
-          <a href="/#about">About</a>
+          <a href="/about">About</a>
         </nav>
         <div className="actions">
           <a className="button small" href="https://admin.driveinstructor.pro/sign-in">
@@ -46,13 +46,13 @@ export default function PricingPage() {
             <b>Product</b>
             <a href="/#features">Features</a>
             <a href="/pricing">Pricing</a>
-            <a href="/#about">About</a>
+            <a href="/about">About</a>
           </div>
           <div>
             <b>Company</b>
-            <a href="/#about">About us</a>
-            <a href="#">Contact</a>
-            <a href="#">Help centre</a>
+            <a href="/about">About us</a>
+            <a href="/contact">Contact</a>
+            <a href="/help">Help centre</a>
           </div>
         </div>
         <div className="copyright">

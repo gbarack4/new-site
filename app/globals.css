@@ -487,7 +487,10 @@
 .saPage .header,
 .payPage .header,
 .sitePage .header,
-.hubPage .header{
+.hubPage .header,
+.contactPage .header,
+.helpPage .header,
+.aboutPage .header{
   max-width:none;
   width:100%;
   box-sizing:border-box;
@@ -499,28 +502,46 @@
 .saPage .header .brand,
 .payPage .header .brand,
 .sitePage .header .brand,
-.hubPage .header .brand{color:#fff}
+.hubPage .header .brand,
+.contactPage .header .brand,
+.helpPage .header .brand,
+.aboutPage .header .brand{color:#fff}
 .saPage .header .brand>span,
 .payPage .header .brand>span,
 .sitePage .header .brand>span,
-.hubPage .header .brand>span{color:#6ea8ff}
+.hubPage .header .brand>span,
+.contactPage .header .brand>span,
+.helpPage .header .brand>span,
+.aboutPage .header .brand>span{color:#6ea8ff}
 .saPage .header nav,
 .payPage .header nav,
 .sitePage .header nav,
-.hubPage .header nav{color:#9dabbc}
+.hubPage .header nav,
+.contactPage .header nav,
+.helpPage .header nav,
+.aboutPage .header nav{color:#9dabbc}
 .saPage .header nav a:hover,
 .payPage .header nav a:hover,
 .sitePage .header nav a:hover,
-.hubPage .header nav a:hover{color:#fff}
+.hubPage .header nav a:hover,
+.contactPage .header nav a:hover,
+.helpPage .header nav a:hover,
+.aboutPage .header nav a:hover{color:#fff}
 .saPage .header .button.small,
 .payPage .header .button.small,
 .sitePage .header .button.small,
-.hubPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
+.hubPage .header .button.small,
+.contactPage .header .button.small,
+.helpPage .header .button.small,
+.aboutPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
 @media(max-width:760px){
   .saPage .header,
   .payPage .header,
   .sitePage .header,
-  .hubPage .header{padding:0 16px}
+  .hubPage .header,
+  .contactPage .header,
+  .helpPage .header,
+  .aboutPage .header{padding:0 16px}
 }
 
 /* Watch demo video modal */
@@ -661,3 +682,164 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
   .siteLoaderRing{animation:none}
 }
 /* Site loader END */
+
+
+/* Contact page */
+.contactPage{--c-blue:#005EFF;--c-ink:#0f1b2d;--c-muted:#5f6f86;background:#f4f7fb;color:var(--c-ink)}
+.contactPage .header{max-width:none;width:100%;box-sizing:border-box;background:#0b1c36;color:#d3dbe7;padding:0 max(24px,calc((100vw - 1200px)/2));border-bottom:1px solid #213149}
+.contactHero{padding:72px max(24px,calc((100vw - 900px)/2)) 40px;background:
+  radial-gradient(ellipse 60% 50% at 10% 0%,#d5e5ff 0%,transparent 55%),
+  linear-gradient(165deg,#eef3fa 0%,#f7f9fc 50%,#e8eef8 100%)}
+.contactBrand{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--c-blue)}
+.contactHero h1{margin:0;font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-1.5px;font-weight:800;max-width:720px}
+.contactHero h1 em{font-style:normal;color:var(--c-blue)}
+.contactHero>p{margin:16px 0 0;font-size:17px;line-height:1.65;color:var(--c-muted);max-width:560px}
+.contactBody{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start;padding:28px max(24px,calc((100vw - 1000px)/2)) 90px}
+.contactPanel{background:#fff;border:1px solid #d9e2ef;border-radius:18px;padding:32px 28px;box-shadow:0 18px 40px #1a335512}
+.contactPanel h2,.contactAside h2{margin:0 0 8px;font-size:22px;letter-spacing:-.4px}
+.contactPanel>p,.contactAside>p{margin:0 0 22px;color:var(--c-muted);font-size:15px;line-height:1.55}
+.contactForm{display:grid;gap:14px}
+.contactForm label{display:grid;gap:6px}
+.contactForm span{font-size:13px;font-weight:700;color:#33475f}
+.contactForm input,.contactForm textarea{width:100%;box-sizing:border-box;border:1px solid #d5deea;border-radius:12px;padding:12px 14px;font:inherit;font-size:14px;color:var(--c-ink);background:#fbfcfe;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.contactForm input:focus,.contactForm textarea:focus{border-color:#8bb4ff;box-shadow:0 0 0 3px #005eff22;background:#fff}
+.contactForm textarea{resize:vertical;min-height:120px}
+.contactForm .button{justify-self:start;margin-top:4px}
+.contactForm .button:disabled{opacity:.7;cursor:wait}
+.contactFormNote{margin:0;font-size:12px;color:#8491a3}
+.contactSuccess{padding:18px 0}
+.contactSuccess b{display:block;font-size:18px;margin-bottom:8px;color:#139a64}
+.contactSuccess p{margin:0 0 16px;color:var(--c-muted);line-height:1.55}
+.contactAgain{border:0;background:transparent;color:var(--c-blue);font:inherit;font-weight:700;padding:0;cursor:pointer}
+.contactAside{display:grid;gap:22px;padding-top:8px}
+.contactChannels{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.contactChannels li{display:grid;gap:4px;padding:16px 18px;background:#fff;border:1px solid #d9e2ef;border-radius:14px}
+.contactChannels small{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--c-blue)}
+.contactChannels a{font-size:15px;font-weight:750;color:var(--c-ink)}
+.contactChannels a:hover{color:var(--c-blue)}
+.contactChannels span{font-size:13px;color:var(--c-muted);line-height:1.45}
+.contactMeta{padding:16px 18px;border-radius:14px;background:#eef4ff;border:1px solid #d6e4ff}
+.contactMeta b{display:block;margin-bottom:6px;font-size:14px}
+.contactMeta p{margin:0;font-size:13px;line-height:1.5;color:#4a5b73}
+.contactMeta a{color:var(--c-blue);font-weight:750}
+@media(max-width:900px){
+  .contactBody{grid-template-columns:1fr;gap:28px}
+  .contactHero{padding:52px 20px 28px}
+  .contactBody{padding:12px 20px 70px}
+  .contactPanel{padding:24px 20px}
+}
+
+/* Contact page END */
+
+
+/* Help centre page */
+.helpPage{--h-blue:#005EFF;--h-ink:#0f1b2d;--h-muted:#5f6f86;background:#f4f7fb;color:var(--h-ink)}
+.helpPage .header{max-width:none;width:100%;box-sizing:border-box;background:#0b1c36;color:#d3dbe7;padding:0 max(24px,calc((100vw - 1200px)/2));border-bottom:1px solid #213149}
+.helpHero{padding:72px max(24px,calc((100vw - 900px)/2)) 36px;background:
+  radial-gradient(ellipse 55% 45% at 90% 10%,#d7e7ff 0%,transparent 55%),
+  linear-gradient(160deg,#eef3fa 0%,#f8fafc 55%,#e9eff8 100%)}
+.helpBrand{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--h-blue)}
+.helpHero h1{margin:0;font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-1.5px;font-weight:800;max-width:720px}
+.helpHero h1 em{font-style:normal;color:var(--h-blue)}
+.helpHero>p{margin:16px 0 0;font-size:17px;line-height:1.65;color:var(--h-muted);max-width:560px}
+.helpTopics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:8px max(24px,calc((100vw - 1100px)/2)) 28px}
+.helpTopic{display:grid;gap:8px;padding:18px 16px;background:#fff;border:1px solid #d9e2ef;border-radius:14px;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.helpTopic:hover{border-color:#b7d2f7;transform:translateY(-2px);box-shadow:0 14px 28px #1a335512}
+.helpTopic b{font-size:14px;color:var(--h-ink)}
+.helpTopic span{font-size:12px;line-height:1.45;color:var(--h-muted)}
+.helpMain{padding:20px max(24px,calc((100vw - 900px)/2)) 40px}
+.helpMainHead{margin-bottom:22px}
+.helpMainHead h2{margin:0 0 8px;font-size:28px;letter-spacing:-.6px}
+.helpMainHead p{margin:0;color:var(--h-muted);font-size:15px}
+.helpSearch input{width:100%;box-sizing:border-box;border:1px solid #d5deea;border-radius:14px;padding:14px 16px;font:inherit;font-size:15px;background:#fff;outline:none}
+.helpSearch input:focus{border-color:#8bb4ff;box-shadow:0 0 0 3px #005eff22}
+.helpCats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 18px}
+.helpCats button{border:1px solid #d5deea;background:#fff;color:#405168;border-radius:999px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.helpCats button.isActive,.helpCats button:hover{border-color:#005EFF;color:#005EFF;background:#eef4ff}
+.helpFaq{display:grid;gap:10px}
+.helpItem{background:#fff;border:1px solid #d9e2ef;border-radius:14px;overflow:hidden}
+.helpQ{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;text-align:left;border:0;background:transparent;padding:16px 18px;cursor:pointer;font:inherit}
+.helpQ small{display:block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--h-blue);margin-bottom:5px}
+.helpQ span{font-size:15px;font-weight:700;color:var(--h-ink);line-height:1.35}
+.helpQ i{font-style:normal;font-weight:700;color:#8491a3;flex:none;margin-top:2px}
+.helpA{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+.helpItem.isOpen .helpA{grid-template-rows:1fr}
+.helpA>p{overflow:hidden;margin:0;padding:0 18px;color:var(--h-muted);font-size:14px;line-height:1.6}
+.helpItem.isOpen .helpA>p{padding-bottom:16px}
+.helpEmpty{margin:0;padding:24px;background:#fff;border:1px dashed #d5deea;border-radius:14px;color:var(--h-muted)}
+.helpEmpty a{color:var(--h-blue);font-weight:700}
+.helpCta{margin:20px max(24px,calc((100vw - 900px)/2)) 80px;padding:28px;border-radius:18px;background:#0b1c36;color:#d7e0ec;display:flex;justify-content:space-between;gap:24px;align-items:center}
+.helpCta h2{margin:0 0 8px;color:#fff;font-size:24px}
+.helpCta p{margin:0;color:#9dabbc;font-size:14px}
+.helpCtaActions{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.helpGhost{color:#9ec0ff;font-size:13px;font-weight:700}
+.helpGhost:hover{color:#fff}
+.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@media(max-width:980px){.helpTopics{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+  .helpHero{padding:52px 20px 24px}
+  .helpTopics,.helpMain{padding-inline:20px}
+  .helpTopics{grid-template-columns:1fr}
+  .helpCta{margin-inline:20px;flex-direction:column;align-items:flex-start}
+  .helpCtaActions{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){.helpA{transition:none}.helpTopic{transition:none}}
+
+/* Help centre page END */
+
+
+/* About us page */
+.aboutPage{--a-blue:#005EFF;--a-ink:#0f1b2d;--a-muted:#5f6f86;background:#f4f7fb;color:var(--a-ink)}
+.aboutPage .header{max-width:none;width:100%;box-sizing:border-box;background:#0b1c36;color:#d3dbe7;padding:0 max(24px,calc((100vw - 1200px)/2));border-bottom:1px solid #213149}
+.aboutHero{padding:72px max(24px,calc((100vw - 900px)/2)) 36px;background:
+  radial-gradient(ellipse 60% 50% at 0% 0%,#d6e6ff 0%,transparent 55%),
+  linear-gradient(165deg,#eef3fa 0%,#f7f9fc 50%,#e8eef8 100%)}
+.aboutBrandLabel{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--a-blue)}
+.aboutHero h1{margin:0;font-size:clamp(34px,4.2vw,52px);line-height:1.08;letter-spacing:-1.6px;font-weight:800;max-width:760px}
+.aboutHero h1 em,.aboutHubIntro h2 em{font-style:normal;color:var(--a-blue)}
+.aboutHero>p{margin:18px 0 0;font-size:18px;line-height:1.65;color:var(--a-muted);max-width:620px}
+.aboutStory{padding:10px max(24px,calc((100vw - 760px)/2)) 50px;display:grid;gap:16px}
+.aboutStory p{margin:0;font-size:17px;line-height:1.7;color:#44566f}
+.aboutBlock{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;padding:70px max(24px,calc((100vw - 1100px)/2));background:#fff;border-block:1px solid #d9e2ef}
+.aboutBlockCopy small,.aboutGoal small,.aboutBalance small,.aboutVision small{display:block;color:var(--a-blue);font-size:11px;font-weight:800;letter-spacing:1.4px}
+.aboutBlockCopy h2,.aboutGoal h2,.aboutBalance h2,.aboutVision h2,.aboutHubIntro h2{margin:12px 0 14px;font-size:clamp(28px,3vw,40px);line-height:1.15;letter-spacing:-1.1px}
+.aboutBlockCopy p,.aboutGoal>p,.aboutBalance p,.aboutVision p,.aboutHubIntro p{margin:0 0 14px;font-size:16px;line-height:1.65;color:var(--a-muted)}
+.aboutList,.aboutHubPanel ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.aboutList li,.aboutHubPanel li,.aboutGoalGrid li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;color:#33475f}
+.aboutGoal{padding:80px max(24px,calc((100vw - 900px)/2));background:linear-gradient(180deg,#eef4ff 0%,#f4f7fb 100%)}
+.aboutGoalGrid{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aboutGoalGrid li{padding:14px 16px;background:#fff;border:1px solid #d9e2ef;border-radius:12px}
+.aboutHub{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start;padding:80px max(24px,calc((100vw - 1100px)/2));background:#0b1c36;color:#d7e0ec}
+.aboutHub .aboutBrandLabel{color:#6ea8ff}
+.aboutHubIntro h2{color:#fff}
+.aboutHubIntro p{color:#9dabbc}
+.aboutHubIntro .button{margin-top:8px}
+.aboutHubPanel{background:#13233f;border:1px solid #213149;border-radius:18px;padding:28px 24px}
+.aboutHubPanel h3{margin:0 0 8px;color:#fff;font-size:20px}
+.aboutHubPanel>p{margin:0 0 18px;color:#9dabbc;font-size:14px;line-height:1.55}
+.aboutHubPanel li{color:#c5d0df}
+.aboutHubPanel .check{color:#3dd68c;background:transparent}
+.aboutExample{margin-top:20px;padding:16px;border-radius:12px;background:#1a2d4d;border:1px solid #2a3f5f}
+.aboutExample b{display:block;margin-bottom:6px;color:#9ec0ff;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.aboutExample p{margin:0;color:#c5d0df;font-size:14px;line-height:1.55}
+.aboutBalance{padding:80px max(24px,calc((100vw - 760px)/2));background:#fff;text-align:center}
+.aboutBalance p{max-width:680px;margin-inline:auto}
+.aboutVision{padding:88px max(24px,calc((100vw - 820px)/2));text-align:center;background:
+  radial-gradient(circle at 50% 0%,#d9e8ff 0%,transparent 55%),
+  #f4f7fb}
+.aboutVision h2{max-width:760px;margin-inline:auto}
+.aboutVision p{max-width:640px;margin-inline:auto}
+.aboutVisionCtas{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px}
+.aboutGhost{font-size:14px;font-weight:750;color:var(--a-ink)}
+.aboutGhost:hover{color:var(--a-blue)}
+@media(max-width:980px){
+  .aboutBlock,.aboutHub{grid-template-columns:1fr;gap:28px}
+  .aboutGoalGrid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .aboutHero{padding:52px 20px 24px}
+  .aboutStory,.aboutBlock,.aboutGoal,.aboutHub,.aboutBalance,.aboutVision{padding-inline:20px}
+  .aboutBlock,.aboutGoal,.aboutHub,.aboutBalance,.aboutVision{padding-block:56px}
+}
+
+/* About us page END */

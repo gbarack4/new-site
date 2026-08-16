@@ -14,7 +14,7 @@ const perks=[
 
 export default function StudentAccountsPage(){
   return <main className="saPage">
-    <header className="header"><a className="brand" href="/"><img src="/logo.png" alt="" width={35} height={35}/>DriveInstructor<span>Pro</span></a><nav><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a><a href="/#about">About</a></nav><div className="actions"><a className="button small" href="https://admin.driveinstructor.pro/sign-in">Sign in</a></div></header>
+    <header className="header"><a className="brand" href="/"><img src="/logo.png" alt="" width={35} height={35}/>DriveInstructor<span>Pro</span></a><nav><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a><a href="/about">About</a></nav><div className="actions"><a className="button small" href="https://admin.driveinstructor.pro/sign-in">Sign in</a></div></header>
 
     <section className="saBanner">
       <a className="saBack" href="/#features">← All features</a>
@@ -79,7 +79,7 @@ export default function StudentAccountsPage(){
           <p>Simple, reliable software that helps driving schools run better and grow with confidence. Bookings, instructors, payments and your website, all in one place.</p>
         </div>
         <div><b>Product</b><a href="/#features">Features</a><a href="/student-accounts">Student accounts</a><a href="/pricing">Pricing</a></div>
-        <div><b>Company</b><a href="/#about">About us</a><a href="#">Contact</a><a href="#">Help centre</a></div>
+        <div><b>Company</b><a href="/about">About us</a><a href="/contact">Contact</a><a href="/help">Help centre</a></div>
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
