@@ -647,3 +647,17 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 }
 
 /* Instructor Hub page END */
+/* Site loader */
+.siteLoader{position:fixed;left:0;right:0;bottom:28px;z-index:9999;display:flex;justify-content:center;pointer-events:none;opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;will-change:opacity,transform}
+.siteLoader.isOpen{opacity:1;transform:translateY(0)}
+.siteLoaderInner{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid #d9e2ef;box-shadow:0 12px 34px #10203a24;color:#10203a;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.siteLoader.isOffline .siteLoaderInner{border-color:#ffd0d0;background:rgba(255,248,248,.95)}
+.siteLoaderLogo{width:28px;height:28px;border-radius:7px;object-fit:contain;flex:none}
+.siteLoaderRing{width:18px;height:18px;border:2px solid #d9e2ef;border-top-color:#005EFF;border-radius:50%;animation:siteSpin .75s linear infinite;flex:none}
+.siteLoaderText{margin:0;font-size:13px;font-weight:650;color:#506075;white-space:nowrap}
+@keyframes siteSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){
+  .siteLoader,.siteLoaderBoot{transition:none!important;animation:none!important}
+  .siteLoaderRing{animation:none}
+}
+/* Site loader END */
