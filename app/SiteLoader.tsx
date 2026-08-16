@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 
 const VISIBLE_MS = 2000;
 const SLOW_VISIBLE_MS = 2800;
-const EXIT_MS = 420;
+const EXIT_MS = 350;
 
 function isSlowConnection() {
   if (typeof navigator === "undefined") return false;
@@ -17,23 +17,21 @@ function isSlowConnection() {
   return conn.effectiveType === "slow-2g" || conn.effectiveType === "2g";
 }
 
-function isRealPageRefresh() {
+/** True only for an actual browser refresh (F5 / reload), not link clicks. */
+function isBrowserReload() {
   const nav = performance.getEntriesByType("navigation")[0] as
     | PerformanceNavigationTiming
     | undefined;
-  if (nav) {
-    return nav.type === "reload" || nav.type === "navigate";
-  }
+  if (nav) return nav.type === "reload";
   const legacy = (performance as Performance & {
     navigation?: {type?: number};
   }).navigation;
-  return legacy?.type === 0 || legacy?.type === 1;
+  return legacy?.type === 1;
 }
 
 type Status = "loading" | "slow" | "offline";
 
 export default function SiteLoader() {
-  const [ready, setReady] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<Status>("loading");
@@ -41,7 +39,6 @@ export default function SiteLoader() {
   const exitTimer = useRef<number | null>(null);
 
   const syncStatus = () => {
-    if (typeof navigator === "undefined") return;
     if (!navigator.onLine) setStatus("offline");
     else if (isSlowConnection()) setStatus("slow");
     else setStatus("loading");
@@ -51,32 +48,10 @@ export default function SiteLoader() {
     if (!navigator.onLine) return;
     setOpen(false);
     if (exitTimer.current) window.clearTimeout(exitTimer.current);
-    exitTimer.current = window.setTimeout(() => {
-      setMounted(false);
-      document.documentElement.classList.add("siteLoaded");
-    }, EXIT_MS);
-  };
-
-  const present = (ms: number) => {
-    if (hideTimer.current) window.clearTimeout(hideTimer.current);
-    if (exitTimer.current) window.clearTimeout(exitTimer.current);
-    syncStatus();
-    setMounted(true);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setOpen(true));
-    });
-    hideTimer.current = window.setTimeout(dismiss, ms);
+    exitTimer.current = window.setTimeout(() => setMounted(false), EXIT_MS);
   };
 
   useEffect(() => {
-    setReady(true);
-
-    const boot = document.getElementById("site-loader-boot");
-    if (boot) {
-      boot.classList.add("isHiding");
-      window.setTimeout(() => boot.remove(), 280);
-    }
-
     const onOnline = () => {
       syncStatus();
       dismiss();
@@ -94,33 +69,35 @@ export default function SiteLoader() {
     window.addEventListener("online", onOnline);
     window.addEventListener("offline", onOffline);
 
-    if (!isRealPageRefresh()) {
-      document.documentElement.classList.add("siteLoaded");
+    // Only browser refresh — never first visit or link clicks.
+    if (!isBrowserReload()) {
       return () => {
         window.removeEventListener("online", onOnline);
         window.removeEventListener("offline", onOffline);
       };
     }
 
-    present(isSlowConnection() ? SLOW_VISIBLE_MS : VISIBLE_MS);
-
-    const conn = (navigator as Navigator & {
-      connection?: EventTarget;
-    }).connection;
-    const onConnChange = () => syncStatus();
-    conn?.addEventListener?.("change", onConnChange);
+    syncStatus();
+    setMounted(true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setOpen(true));
+    });
+    hideTimer.current = window.setTimeout(
+      dismiss,
+      isSlowConnection() ? SLOW_VISIBLE_MS : VISIBLE_MS,
+    );
 
     return () => {
       window.removeEventListener("online", onOnline);
       window.removeEventListener("offline", onOffline);
-      conn?.removeEventListener?.("change", onConnChange);
       if (hideTimer.current) window.clearTimeout(hideTimer.current);
       if (exitTimer.current) window.clearTimeout(exitTimer.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!ready || !mounted) return null;
+  // SSR and first client render always return null → no hydration mismatch.
+  if (!mounted) return null;
 
   const text =
     status === "offline"
