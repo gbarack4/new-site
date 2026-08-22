@@ -28,9 +28,9 @@ const bookingView = [
 ];
 
 const locations = [
-  ["Mon–Tue", "Brisbane City"],
+  ["Mon-Tue", "Brisbane City"],
   ["Wed", "North Lakes"],
-  ["Thu–Fri", "Redcliffe"],
+  ["Thu-Fri", "Redcliffe"],
   ["Weekend", "Unavailable"],
 ];
 

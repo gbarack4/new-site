@@ -120,7 +120,7 @@ const faqs = [
 
 function Cell({value}: {value: string | boolean}) {
   if (value === true) return <span className="priceTick">✓</span>;
-  if (value === false) return <span className="priceDash">—</span>;
+  if (value === false) return <span className="priceDash" aria-hidden="true" />;
   return <span>{value}</span>;
 }
 

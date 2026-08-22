@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 export const metadata: Metadata = {
   title: "About Us | DriveInstructor Pro",
   description:
-    "Learn about DriveInstructor Pro and Instructor Hub — the connected platform helping driving schools, instructors and students stay organised.",
+    "Learn about DriveInstructor Pro and Instructor Hub: the connected platform helping driving schools, instructors and students stay organised.",
 };
 
 const schoolTools = [

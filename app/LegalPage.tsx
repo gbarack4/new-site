@@ -1,10 +1,18 @@
-import type {Metadata} from "next";
+import type {Metadata, ReactNode} from "next";
 
 type Props = {
   title: string;
+  headline?: string;
+  updated?: string;
+  children?: ReactNode;
 };
 
-export function LegalPage({title}: Props) {
+export function LegalPage({
+  title,
+  headline = "Hello world",
+  updated,
+  children,
+}: Props) {
   return (
     <main className="legalPage">
       <header className="header">
@@ -28,8 +36,11 @@ export function LegalPage({title}: Props) {
 
       <section className="legalHero">
         <p className="legalBrand">{title}</p>
-        <h1>Hello world</h1>
+        <h1>{headline}</h1>
+        {updated ? <p className="legalUpdated">Last updated: {updated}</p> : null}
       </section>
+
+      {children ? <article className="legalBody">{children}</article> : null}
 
       <footer>
         <div className="footgrid">
@@ -70,9 +81,9 @@ export function LegalPage({title}: Props) {
   );
 }
 
-export function legalMetadata(title: string): Metadata {
+export function legalMetadata(title: string, description?: string): Metadata {
   return {
     title: `${title} | DriveInstructor Pro`,
-    description: `${title} for DriveInstructor Pro.`,
+    description: description ?? `${title} for DriveInstructor Pro.`,
   };
 }

@@ -69,7 +69,7 @@ export default function SiteLoader() {
     window.addEventListener("online", onOnline);
     window.addEventListener("offline", onOffline);
 
-    // Only browser refresh — never first visit or link clicks.
+    // Only browser refresh: never first visit or link clicks.
     if (!isBrowserReload()) {
       return () => {
         window.removeEventListener("online", onOnline);

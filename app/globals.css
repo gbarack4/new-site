@@ -158,7 +158,7 @@
   .flowStep,.flowOut{opacity:1;transform:none;animation:none!important}
 }
 
-/* Student accounts page — distinct layout */
+/* Student accounts page: distinct layout */
 .saBanner{padding:72px max(24px,calc((100vw - 980px)/2)) 64px;background:linear-gradient(155deg,#0b1c36 0%,#12325f 55%,#0d2748 100%);color:#fff;text-align:left}
 .saBack{display:inline-flex;color:#9db0cc;font-size:13px;font-weight:650;margin-bottom:22px}
 .saBack:hover{color:#fff}
@@ -216,7 +216,7 @@
 @media(max-width:520px){.saBanner h1{font-size:34px;letter-spacing:-1.4px}.saPhone{width:min(250px,82%)}.saFloat{padding:10px 11px}.saFloat b{font-size:11px}.saFloat small{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.saPhone,.saFloat,.saFloatA,.saFloatB,.saPerkList li{animation:none!important;opacity:1;transform:none}}
 
-/* Payments & credits page — distinct layout */
+/* Payments & credits page: distinct layout */
 .payIntro{padding:64px max(24px,calc((100vw - 1120px)/2)) 28px;background:#f7f4ef}
 .payBack{display:inline-flex;color:#7a6f62;font-size:13px;font-weight:650;margin-bottom:28px}
 .payBack:hover{color:var(--blue)}
@@ -265,7 +265,7 @@
 }
 @media(prefers-reduced-motion:reduce){.payRail article,.payShot{animation:none!important;opacity:1;transform:none}}
 
-/* Your own website page — distinct browser/domain layout */
+/* Your own website page: distinct browser/domain layout */
 .siteHero{padding:70px max(24px,calc((100vw - 920px)/2)) 36px;text-align:center;background:#fff}
 .siteBack{display:inline-flex;color:#6b798d;font-size:13px;font-weight:650;margin-bottom:22px}
 .siteBack:hover{color:var(--blue)}
@@ -442,7 +442,7 @@
 .pricingPreviewCta span{font-size:13px;color:#66768c;font-weight:650}
 @media(max-width:760px){.pricingPreview{padding:48px 20px}}
 
-/* Pricing page header — dark on all breakpoints */
+/* Pricing page header: dark on all breakpoints */
 .pricePage .header{
   max-width:none;
   width:100%;
@@ -463,7 +463,7 @@
   .pricePage .header{padding:0 16px}
 }
 
-/* Feature pages header — dark on all breakpoints */
+/* Feature pages header: dark on all breakpoints */
 .featurePage .header{
   max-width:none;
   width:100%;
@@ -853,13 +853,19 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 
 
 /* Legal placeholder pages */
-.legalPage{background:#f4f7fb;color:#0f1b2d;min-height:100vh;display:flex;flex-direction:column}
+.legalPage{background:#fff;color:#0f1b2d;min-height:100vh;display:flex;flex-direction:column}
 .legalPage .header{max-width:none;width:100%;box-sizing:border-box;background:#0b1c36;color:#d3dbe7;padding:0 max(24px,calc((100vw - 1200px)/2));border-bottom:1px solid #213149}
-.legalHero{flex:1;padding:100px max(24px,calc((100vw - 800px)/2)) 80px;background:
-  radial-gradient(ellipse 55% 45% at 20% 0%,#d7e7ff 0%,transparent 55%),
-  linear-gradient(165deg,#eef3fa 0%,#f7f9fc 100%)}
+.legalHero{padding:72px max(24px,calc((100vw - 800px)/2)) 28px;background:#fff}
 .legalBrand{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#005EFF}
-.legalHero h1{margin:0;font-size:clamp(40px,6vw,64px);letter-spacing:-1.8px;font-weight:800;color:#0f1b2d}
-@media(max-width:760px){.legalHero{padding:64px 20px 56px}}
+.legalHero h1{margin:0;font-size:clamp(34px,4.5vw,48px);letter-spacing:-1.4px;font-weight:800;color:#0f1b2d;line-height:1.12}
+.legalUpdated{margin:14px 0 0;font-size:13px;color:#5f6f86}
+.legalBody{flex:1;padding:10px max(24px,calc((100vw - 760px)/2)) 80px}
+.legalBody h2{margin:28px 0 10px;font-size:20px;letter-spacing:-.3px;color:#0f1b2d}
+.legalBody p{margin:0 0 12px;font-size:15px;line-height:1.7;color:#44566f}
+.legalBody ul{margin:0 0 14px;padding-left:20px;display:grid;gap:8px}
+.legalBody li{font-size:15px;line-height:1.6;color:#44566f}
+.legalBody a{color:#005EFF;font-weight:650}
+.legalBody a:hover{text-decoration:underline}
+@media(max-width:760px){.legalHero{padding:56px 20px 20px}.legalBody{padding:8px 20px 64px}}
 
 /* Legal placeholder pages END */
