@@ -1,15 +1,12 @@
 import type {Metadata} from "next";
-import PricingClient from "./PricingClient";
 
-export const metadata: Metadata = {
-  title: "Pricing | DriveInstructor Pro",
-  description:
-    "Simple plans for every driving school. Solo, Growth and Pro with monthly or annual billing. Start free for 14 days.",
+type Props = {
+  title: string;
 };
 
-export default function PricingPage() {
+export function LegalPage({title}: Props) {
   return (
-    <main className="pricePage">
+    <main className="legalPage">
       <header className="header">
         <a className="brand" href="/">
           <img src="/logo.png" alt="" width={35} height={35} />
@@ -29,7 +26,10 @@ export default function PricingPage() {
         </div>
       </header>
 
-      <PricingClient />
+      <section className="legalHero">
+        <p className="legalBrand">{title}</p>
+        <h1>Hello world</h1>
+      </section>
 
       <footer>
         <div className="footgrid">
@@ -40,14 +40,14 @@ export default function PricingPage() {
             </a>
             <p>
               Simple, reliable software that helps driving schools run better and grow with
-              confidence. Bookings, instructors, payments and your website, all in one place.
+              confidence.
             </p>
           </div>
           <div>
             <b>Product</b>
             <a href="/#features">Features</a>
+            <a href="/instructor-hub">Instructor Hub</a>
             <a href="/pricing">Pricing</a>
-            <a href="/about">About</a>
           </div>
           <div>
             <b>Company</b>
@@ -68,4 +68,11 @@ export default function PricingPage() {
       </footer>
     </main>
   );
+}
+
+export function legalMetadata(title: string): Metadata {
+  return {
+    title: `${title} | DriveInstructor Pro`,
+    description: `${title} for DriveInstructor Pro.`,
+  };
 }

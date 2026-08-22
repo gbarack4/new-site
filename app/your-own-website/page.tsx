@@ -76,7 +76,7 @@ export default function YourOwnWebsitePage(){
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
-        <nav className="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></nav>
+        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>
         <span>Made with care in Australia 🇦🇺</span>
       </div>
     </footer>

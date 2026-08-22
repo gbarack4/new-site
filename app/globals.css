@@ -490,7 +490,8 @@
 .hubPage .header,
 .contactPage .header,
 .helpPage .header,
-.aboutPage .header{
+.aboutPage .header,
+.legalPage .header{
   max-width:none;
   width:100%;
   box-sizing:border-box;
@@ -505,35 +506,40 @@
 .hubPage .header .brand,
 .contactPage .header .brand,
 .helpPage .header .brand,
-.aboutPage .header .brand{color:#fff}
+.aboutPage .header .brand,
+.legalPage .header .brand{color:#fff}
 .saPage .header .brand>span,
 .payPage .header .brand>span,
 .sitePage .header .brand>span,
 .hubPage .header .brand>span,
 .contactPage .header .brand>span,
 .helpPage .header .brand>span,
-.aboutPage .header .brand>span{color:#6ea8ff}
+.aboutPage .header .brand>span,
+.legalPage .header .brand>span{color:#6ea8ff}
 .saPage .header nav,
 .payPage .header nav,
 .sitePage .header nav,
 .hubPage .header nav,
 .contactPage .header nav,
 .helpPage .header nav,
-.aboutPage .header nav{color:#9dabbc}
+.aboutPage .header nav,
+.legalPage .header nav{color:#9dabbc}
 .saPage .header nav a:hover,
 .payPage .header nav a:hover,
 .sitePage .header nav a:hover,
 .hubPage .header nav a:hover,
 .contactPage .header nav a:hover,
 .helpPage .header nav a:hover,
-.aboutPage .header nav a:hover{color:#fff}
+.aboutPage .header nav a:hover,
+.legalPage .header nav a:hover{color:#fff}
 .saPage .header .button.small,
 .payPage .header .button.small,
 .sitePage .header .button.small,
 .hubPage .header .button.small,
 .contactPage .header .button.small,
 .helpPage .header .button.small,
-.aboutPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
+.aboutPage .header .button.small,
+.legalPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
 @media(max-width:760px){
   .saPage .header,
   .payPage .header,
@@ -541,7 +547,8 @@
   .hubPage .header,
   .contactPage .header,
   .helpPage .header,
-  .aboutPage .header{padding:0 16px}
+  .aboutPage .header,
+  .legalPage .header{padding:0 16px}
 }
 
 /* Watch demo video modal */
@@ -843,3 +850,16 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 }
 
 /* About us page END */
+
+
+/* Legal placeholder pages */
+.legalPage{background:#f4f7fb;color:#0f1b2d;min-height:100vh;display:flex;flex-direction:column}
+.legalPage .header{max-width:none;width:100%;box-sizing:border-box;background:#0b1c36;color:#d3dbe7;padding:0 max(24px,calc((100vw - 1200px)/2));border-bottom:1px solid #213149}
+.legalHero{flex:1;padding:100px max(24px,calc((100vw - 800px)/2)) 80px;background:
+  radial-gradient(ellipse 55% 45% at 20% 0%,#d7e7ff 0%,transparent 55%),
+  linear-gradient(165deg,#eef3fa 0%,#f7f9fc 100%)}
+.legalBrand{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#005EFF}
+.legalHero h1{margin:0;font-size:clamp(40px,6vw,64px);letter-spacing:-1.8px;font-weight:800;color:#0f1b2d}
+@media(max-width:760px){.legalHero{padding:64px 20px 56px}}
+
+/* Legal placeholder pages END */
