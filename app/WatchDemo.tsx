@@ -3,8 +3,8 @@
 import {useEffect, useState} from "react";
 import {createPortal} from "react-dom";
 
-const DEMO_EMBED =
-  "https://www.youtube.com/embed/185XGEMefgc?si=roAGkfkAwGA91jxt&autoplay=1&rel=0";
+const DEMO_VIDEO =
+  "https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/ads1.mov";
 
 export default function WatchDemo() {
   const [open, setOpen] = useState(false);
@@ -48,14 +48,16 @@ export default function WatchDemo() {
               >
                 ×
               </button>
-              <iframe
+              <video
                 className="videoModalPlayer"
-                src={DEMO_EMBED}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+                src={DEMO_VIDEO}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+              >
+                Your browser does not support the video player.
+              </video>
             </div>
           </div>,
           document.body,

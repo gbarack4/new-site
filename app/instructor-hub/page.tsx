@@ -300,9 +300,7 @@ export default function InstructorHubPage() {
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>
-          <span>Made with care in Australia 🇦🇺</span>
-        </div>
+          </nav>        </div>
       </footer>
     </main>
   );
