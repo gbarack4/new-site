@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import WatchDemo from "../WatchDemo";
 
 export const metadata: Metadata = {
   title: "Instructor Hub | DriveInstructor Pro",
@@ -72,12 +73,16 @@ export default function InstructorHubPage() {
             school from a single account.
           </p>
           <div className="hubCtas">
-            <a className="button" href="https://admin.driveinstructor.pro/sign-up">
+            <a className="button" href="https://app.driveinstructor.pro/login">
               Sign up today →
             </a>
-            <a className="hubGhost" href="#calendar">
+            <WatchDemo
+              className="hubGhost"
+              src="https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/hub5.mov"
+              label="Instructor Hub demo video"
+            >
               See how it works
-            </a>
+            </WatchDemo>
           </div>
         </div>
         <div className="hubHeroVisual" aria-hidden="true">
@@ -263,7 +268,7 @@ export default function InstructorHubPage() {
           Work with multiple schools, teach in different locations and manage every lesson
           from one platform, without the risk of being double-booked.
         </p>
-        <a className="button" href="https://admin.driveinstructor.pro/sign-up">
+        <a className="button" href="https://app.driveinstructor.pro/login">
           Sign up today →
         </a>
       </section>
@@ -300,7 +305,16 @@ export default function InstructorHubPage() {
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>        </div>
+          </nav>
+          <a
+            className="copyrightCommunity"
+            href="https://chat.whatsapp.com/BvA1PVBN0kB4SVJUXxA0X5?mode=gi_t"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join our community
+          </a>
+        </div>
       </footer>
     </main>
   );

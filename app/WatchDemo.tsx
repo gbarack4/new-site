@@ -1,12 +1,24 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useEffect, useState, type ReactNode} from "react";
 import {createPortal} from "react-dom";
 
-const DEMO_VIDEO =
+const DEFAULT_VIDEO =
   "https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/ads1.mov";
 
-export default function WatchDemo() {
+type WatchDemoProps = {
+  src?: string;
+  className?: string;
+  children?: ReactNode;
+  label?: string;
+};
+
+export default function WatchDemo({
+  src = DEFAULT_VIDEO,
+  className = "watch",
+  children,
+  label = "Product demo video",
+}: WatchDemoProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -36,7 +48,7 @@ export default function WatchDemo() {
             className="videoModal"
             role="dialog"
             aria-modal="true"
-            aria-label="Product demo video"
+            aria-label={label}
             onClick={() => setOpen(false)}
           >
             <div className="videoModalInner" onClick={(e) => e.stopPropagation()}>
@@ -50,7 +62,7 @@ export default function WatchDemo() {
               </button>
               <video
                 className="videoModalPlayer"
-                src={DEMO_VIDEO}
+                src={src}
                 controls
                 autoPlay
                 playsInline
@@ -66,8 +78,12 @@ export default function WatchDemo() {
 
   return (
     <>
-      <button type="button" className="watch" onClick={() => setOpen(true)}>
-        <b>▶</b> See how it works
+      <button type="button" className={className} onClick={() => setOpen(true)}>
+        {children ?? (
+          <>
+            <b>▶</b> See how it works
+          </>
+        )}
       </button>
       {modal}
     </>
