@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import WatchDemo from "../WatchDemo";
+import FooterSocial from "../FooterSocial";
 
 export const metadata: Metadata = {
   title: "Instructor Hub | DriveInstructor Pro",
@@ -306,14 +307,7 @@ export default function InstructorHubPage() {
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
           </nav>
-          <a
-            className="copyrightCommunity"
-            href="https://chat.whatsapp.com/BvA1PVBN0kB4SVJUXxA0X5?mode=gi_t"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join our community
-          </a>
+          <FooterSocial />
         </div>
       </footer>
     </main>

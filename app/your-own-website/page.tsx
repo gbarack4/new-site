@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import FooterSocial from "../FooterSocial";
 
 export const metadata:Metadata={
   title:"Your Own Website | DriveInstructor Pro",
@@ -76,7 +77,9 @@ export default function YourOwnWebsitePage(){
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
-        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>      </div>
+        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>
+        <FooterSocial />
+      </div>
     </footer>
   </main>;
 }

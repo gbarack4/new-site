@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import PricingClient from "./PricingClient";
+import FooterSocial from "../FooterSocial";
 
 export const metadata: Metadata = {
   title: "Pricing | DriveInstructor Pro",
@@ -62,7 +63,9 @@ export default function PricingPage() {
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>        </div>
+          </nav>
+          <FooterSocial />
+        </div>
       </footer>
     </main>
   );

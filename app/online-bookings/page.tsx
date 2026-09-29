@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import WatchDemo from "../WatchDemo";
+import FooterSocial from "../FooterSocial";
 
 export const metadata:Metadata={
   title:"Online Bookings | DriveInstructor Pro",
@@ -34,7 +36,9 @@ export default function OnlineBookingsPage(){
         <p>DriveInstructor Pro lets students book and pay from a professional site built around your school, with instant confirmations and reminders that keep every lesson on track.</p>
         <div className="heroButtons">
           <a className="button" href="https://admin.driveinstructor.pro/sign-up">Start your free trial <span className="btnArrow">→</span></a>
-          <a className="watch" href="#pitch"><b>▶</b> See why schools switch</a>
+          <WatchDemo src="https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/hub5.mov">
+            <b>▶</b> See why schools switch
+          </WatchDemo>
         </div>
         <div className="reassure"><div className="reassureRow"><span><Check/>14 days free</span><span><Check/>No credit card required</span><span><Check/>Cancel anytime</span></div></div>
       </div>
@@ -136,7 +140,9 @@ export default function OnlineBookingsPage(){
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
-        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>      </div>
+        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>
+        <FooterSocial />
+      </div>
     </footer>
   </main>;
 }

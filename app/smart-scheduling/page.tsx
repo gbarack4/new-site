@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import WatchDemo from "../WatchDemo";
+import FooterSocial from "../FooterSocial";
 
 export const metadata:Metadata={
   title:"Smart Scheduling | DriveInstructor Pro",
@@ -32,12 +34,14 @@ export default function SmartSchedulingPage(){
         <p>DriveInstructor Pro gives your school one live schedule for lessons, instructors and travel time, so every day runs smoothly without double bookings.</p>
         <div className="heroButtons">
           <a className="button" href="https://admin.driveinstructor.pro/sign-up">Start your free trial <span className="btnArrow">→</span></a>
-          <a className="watch" href="#pitch"><b>▶</b> See why schools switch</a>
+          <WatchDemo src="https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/hub5.mov">
+            <b>▶</b> See why schools switch
+          </WatchDemo>
         </div>
         <div className="reassure"><div className="reassureRow"><span><Check/>14 days free</span><span><Check/>No credit card required</span><span><Check/>Cancel anytime</span></div></div>
       </div>
       <div className="featurePhone">
-        <img src="/smart-scheduling.png" alt="DriveInstructor Pro bookings calendar on mobile showing upcoming lessons" width={571} height={1024}/>
+        <video src="https://userupload-813333281041-ap-southeast-2-an.s3.ap-southeast-2.amazonaws.com/Videos+/Booking+Flow+Video.mp4" autoPlay muted loop playsInline preload="metadata" title="DriveInstructor Pro bookings calendar on mobile showing upcoming lessons" width={571} height={1024}/>
       </div>
     </section>
 
@@ -107,7 +111,9 @@ export default function SmartSchedulingPage(){
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
-        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>      </div>
+        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>
+        <FooterSocial />
+      </div>
     </footer>
   </main>;
 }

@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import HelpCentreClient from "./HelpCentreClient";
+import FooterSocial from "../FooterSocial";
 
 export const metadata: Metadata = {
   title: "Help Centre | DriveInstructor Pro",
@@ -111,7 +112,9 @@ export default function HelpCentrePage() {
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>        </div>
+          </nav>
+          <FooterSocial />
+        </div>
       </footer>
     </main>
   );

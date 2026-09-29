@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import FooterSocial from "../FooterSocial";
 
 export const metadata:Metadata={
   title:"Payments & Credits | DriveInstructor Pro",
@@ -85,7 +86,9 @@ export default function PaymentsCreditsPage(){
       </div>
       <div className="copyright">
         <span>© 2026 DriveInstructor Pro. All rights reserved.</span>
-        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>      </div>
+        <nav className="legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a></nav>
+        <FooterSocial />
+      </div>
     </footer>
   </main>;
 }

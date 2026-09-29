@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import type {ReactNode} from "react";
+import FooterSocial from "./FooterSocial";
 
 type Props = {
   title: string;
@@ -74,7 +75,9 @@ export function LegalPage({
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>        </div>
+          </nav>
+          <FooterSocial />
+        </div>
       </footer>
     </main>
   );

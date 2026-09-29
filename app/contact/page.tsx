@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import ContactForm from "./ContactForm";
+import FooterSocial from "../FooterSocial";
 
 export const metadata: Metadata = {
   title: "Contact | DriveInstructor Pro",
@@ -118,7 +119,9 @@ export default function ContactPage() {
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href="/security">Security</a>
-          </nav>        </div>
+          </nav>
+          <FooterSocial />
+        </div>
       </footer>
     </main>
   );
