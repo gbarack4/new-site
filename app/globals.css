@@ -11,7 +11,7 @@
 .hero h1{max-width:560px;font-size:56px;line-height:1.07;letter-spacing:-2.8px}
 .heroCopy>p{font-size:17px;line-height:1.68;max-width:530px}
 .stage{width:100%;max-width:720px;min-width:0;justify-self:end}
-.dashShot{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #d9e1ec;box-shadow:0 32px 75px #173c7229;background:#f4f6f9}
+.dashShot{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #d9e1ec;box-shadow:0 32px 75px #173c7229;background:#f4f6f9;object-fit:cover}
 .dashboard{height:560px;grid-template-columns:145px 1fr;border-radius:14px;box-shadow:0 32px 75px #173c7229;background:#f4f6f9}
 .dashmain{padding:14px 14px 12px;overflow:auto;display:flex;flex-direction:column;gap:10px}
 .dashtop{display:flex;align-items:center;justify-content:space-between;gap:10px}
