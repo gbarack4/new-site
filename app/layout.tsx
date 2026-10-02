@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+  verification: {
+    google: "DU18T4o1_tcptVGp7bdZeMZikZEKzan_pW86JBogW58",
+  },
   other: {"codex-preview": "development"},
 };
 
