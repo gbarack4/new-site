@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   verification: {
     google: "DU18T4o1_tcptVGp7bdZeMZikZEKzan_pW86JBogW58",
   },
-  other: {"codex-preview": "development"},
+  other: {
+    "codex-preview": "development",
+    "facebook-domain-verification": "qery1vkcubobyusk489uu0003gykdp",
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
