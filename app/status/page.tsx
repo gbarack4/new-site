@@ -1,24 +1,38 @@
 import type {Metadata} from "next";
-import HelpCentreClient from "./HelpCentreClient";
 import FooterSocial from "../FooterSocial";
 
 export const metadata: Metadata = {
-  title: "Help Centre | DriveInstructor Pro",
+  title: "System Status | DriveInstructor Pro",
   description:
-    "Find answers about bookings, instructors, payments, student accounts and Instructor Hub for DriveInstructor Pro.",
+    "Live operational status for DriveInstructor Pro — school admin, Instructor Hub, bookings, payments and websites.",
 };
 
-const topics = [
-  ["Getting started", "Trial setup, school profile and first bookings", "/#how"],
-  ["Online bookings", "Student booking flow, confirmations and reminders", "/online-bookings"],
-  ["Instructor Hub", "Multi-school calendars, availability and locations", "/instructor-hub"],
-  ["Payments & credits", "Card payments, packages and instructor payouts", "/payments-credits"],
-  ["Stripe setup", "Connect Stripe keys and instructor payout accounts", "/help/stripe"],
+const services = [
+  {
+    name: "School admin",
+    detail: "Sign-in, students, schedules and school settings",
+  },
+  {
+    name: "Instructor Hub",
+    detail: "Instructor calendars, availability and multi-school access",
+  },
+  {
+    name: "Online bookings & websites",
+    detail: "Public school sites and student booking flows",
+  },
+  {
+    name: "Payments & Stripe Connect",
+    detail: "Student card payments and instructor payouts",
+  },
+  {
+    name: "API & notifications",
+    detail: "Confirmations, reminders and platform integrations",
+  },
 ];
 
-export default function HelpCentrePage() {
+export default function StatusPage() {
   return (
-    <main className="helpPage">
+    <main className="statusPage">
       <header className="header">
         <a className="brand" href="/">
           <img src="/logo.png" alt="" width={35} height={35} />
@@ -38,45 +52,56 @@ export default function HelpCentrePage() {
         </div>
       </header>
 
-      <section className="helpHero" id="top">
-        <p className="helpBrand">Help centre</p>
+      <section className="statusHero" id="top">
+        <p className="statusBrand">System status</p>
         <h1>
-          Answers for running your
-          <em> driving school.</em>
+          All systems
+          <em> operational.</em>
         </h1>
         <p>
-          Browse common questions about setup, bookings, instructors, payments and student
-          accounts. Still stuck? Contact our Australian support team.
+          Current availability across DriveInstructor Pro. If something looks wrong on your
+          side, contact support and we&apos;ll help straight away.
+        </p>
+        <p className="statusBanner" role="status">
+          <i aria-hidden="true" />
+          <span>No incidents reported</span>
         </p>
       </section>
 
-      <section className="helpTopics">
-        {topics.map(([title, copy, href]) => (
-          <a key={title} className="helpTopic" href={href}>
-            <b>{title}</b>
-            <span>{copy}</span>
-          </a>
-        ))}
-      </section>
-
-      <section className="helpMain">
-        <div className="helpMainHead">
-          <h2>Frequently asked questions</h2>
-          <p>Search or filter by topic to find what you need quickly.</p>
+      <section className="statusList" aria-label="Service status">
+        <div className="statusListHead">
+          <h2>Services</h2>
+          <p>Updated continuously for the main platform surfaces.</p>
         </div>
-        <HelpCentreClient />
+        <ul>
+          {services.map((s) => (
+            <li key={s.name}>
+              <div>
+                <b>{s.name}</b>
+                <span>{s.detail}</span>
+              </div>
+              <em>
+                <i aria-hidden="true" />
+                Operational
+              </em>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <section className="helpCta">
+      <section className="statusHelp">
         <div>
-          <h2>Need more help?</h2>
-          <p>Our team can help with onboarding, billing and product questions.</p>
+          <h2>Seeing an issue?</h2>
+          <p>
+            Tell us what you were doing and which school or instructor account is affected.
+            We&apos;ll investigate quickly.
+          </p>
         </div>
-        <div className="helpCtaActions">
+        <div className="statusHelpActions">
           <a className="button" href="/contact">
             Contact support →
           </a>
-          <a className="helpGhost" href="mailto:support@driveinstructor.pro">
+          <a className="statusGhost" href="mailto:support@driveinstructor.pro">
             support@driveinstructor.pro
           </a>
         </div>
@@ -105,6 +130,7 @@ export default function HelpCentrePage() {
             <a href="/about">About us</a>
             <a href="/contact">Contact</a>
             <a href="/help">Help centre</a>
+            <a href="/status">System status</a>
           </div>
         </div>
         <div className="copyright">

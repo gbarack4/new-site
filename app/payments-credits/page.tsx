@@ -47,7 +47,10 @@ export default function PaymentsCreditsPage(){
           <li>Instructor payouts after lessons are completed</li>
           <li>AUD-ready setup for Australian schools</li>
         </ul>
-        <a className="button" href="/pricing">Try payments free →</a>
+        <div className="payPanelActions">
+          <a className="button" href="/pricing">Try payments free →</a>
+          <a className="payGuideLink" href="/help/stripe">Stripe setup guide →</a>
+        </div>
       </div>
       <figure className="payShot">
         <img src="/payments-credits-clean.png" alt="Payment gateway settings with Stripe Connect, currency and instructor payout options" width={591} height={960}/>

@@ -1,8 +1,15 @@
 "use client";
 
-import {useMemo, useState} from "react";
+import {type ReactNode, useMemo, useState} from "react";
 
-const faqs = [
+type Faq = {
+  cat: string;
+  q: string;
+  a: ReactNode;
+  search?: string;
+};
+
+const faqs: Faq[] = [
   {
     cat: "Getting started",
     q: "How do I start a free trial?",
@@ -40,6 +47,20 @@ const faqs = [
   },
   {
     cat: "Payments",
+    q: "How do I connect Stripe for payments and instructor payouts?",
+    search:
+      "stripe connect api keys client id oauth instructor payouts payments gateway settings guide",
+    a: (
+      <>
+        Open Settings → Payment gateway → Stripe in the admin. Add your Stripe API keys for student
+        payments, enable Accounts v1 and Connect OAuth in Stripe, then paste the Connect Client ID
+        for instructor payouts.{" "}
+        <a href="/help/stripe">Read the full Stripe setup guide</a>.
+      </>
+    ),
+  },
+  {
+    cat: "Payments",
     q: "Do I need a credit card for the trial?",
     a: "No. You can start a 14-day free trial without entering a credit card.",
   },
@@ -68,7 +89,12 @@ export default function HelpCentreClient() {
       const catOk = cat === "All" || f.cat === cat;
       if (!catOk) return false;
       if (!q) return true;
-      return f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q) || f.cat.toLowerCase().includes(q);
+      const answerText = typeof f.a === "string" ? f.a : f.search || "";
+      return (
+        f.q.toLowerCase().includes(q) ||
+        answerText.toLowerCase().includes(q) ||
+        f.cat.toLowerCase().includes(q)
+      );
     });
   }, [query, cat]);
 

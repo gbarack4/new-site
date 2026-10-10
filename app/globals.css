@@ -243,6 +243,9 @@
 .payPanel ul{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-direction:column;gap:12px}
 .payPanel li{position:relative;padding-left:18px;font-size:14px;font-weight:650;color:#d7e3f0}
 .payPanel li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:1px;background:#5b9bff;transform:rotate(45deg)}
+.payPanelActions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.payGuideLink{color:#9ec0ff;font-size:14px;font-weight:750}
+.payGuideLink:hover{color:#fff}
 .payShot{margin:0;justify-self:center;animation:payShotIn .8s cubic-bezier(.22,1,.36,1) .2s both}
 @keyframes payShotIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .payShot img{display:block;width:min(340px,82vw);height:auto;border-radius:20px;box-shadow:0 28px 60px #00000066,0 0 0 1px #ffffff14;background:#fff}
@@ -496,7 +499,8 @@
 .contactPage .header,
 .helpPage .header,
 .aboutPage .header,
-.legalPage .header{
+.legalPage .header,
+.statusPage .header{
   max-width:none;
   width:100%;
   box-sizing:border-box;
@@ -512,7 +516,8 @@
 .contactPage .header .brand,
 .helpPage .header .brand,
 .aboutPage .header .brand,
-.legalPage .header .brand{color:#fff}
+.legalPage .header .brand,
+.statusPage .header .brand{color:#fff}
 .saPage .header .brand>span,
 .payPage .header .brand>span,
 .sitePage .header .brand>span,
@@ -520,7 +525,8 @@
 .contactPage .header .brand>span,
 .helpPage .header .brand>span,
 .aboutPage .header .brand>span,
-.legalPage .header .brand>span{color:#6ea8ff}
+.legalPage .header .brand>span,
+.statusPage .header .brand>span{color:#6ea8ff}
 .saPage .header nav,
 .payPage .header nav,
 .sitePage .header nav,
@@ -528,7 +534,8 @@
 .contactPage .header nav,
 .helpPage .header nav,
 .aboutPage .header nav,
-.legalPage .header nav{color:#9dabbc}
+.legalPage .header nav,
+.statusPage .header nav{color:#9dabbc}
 .saPage .header nav a:hover,
 .payPage .header nav a:hover,
 .sitePage .header nav a:hover,
@@ -536,7 +543,8 @@
 .contactPage .header nav a:hover,
 .helpPage .header nav a:hover,
 .aboutPage .header nav a:hover,
-.legalPage .header nav a:hover{color:#fff}
+.legalPage .header nav a:hover,
+.statusPage .header nav a:hover{color:#fff}
 .saPage .header .button.small,
 .payPage .header .button.small,
 .sitePage .header .button.small,
@@ -544,7 +552,8 @@
 .contactPage .header .button.small,
 .helpPage .header .button.small,
 .aboutPage .header .button.small,
-.legalPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
+.legalPage .header .button.small,
+.statusPage .header .button.small{background:#005EFF;box-shadow:0 8px 18px #005eff44}
 @media(max-width:760px){
   .saPage .header,
   .payPage .header,
@@ -553,7 +562,8 @@
   .contactPage .header,
   .helpPage .header,
   .aboutPage .header,
-  .legalPage .header{padding:0 16px}
+  .legalPage .header,
+  .statusPage .header{padding:0 16px}
 }
 
 /* Watch demo video modal */
@@ -761,7 +771,9 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 .helpHero h1{margin:0;font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-1.5px;font-weight:800;max-width:720px}
 .helpHero h1 em{font-style:normal;color:var(--h-blue)}
 .helpHero>p{margin:16px 0 0;font-size:17px;line-height:1.65;color:var(--h-muted);max-width:560px}
-.helpTopics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:8px max(24px,calc((100vw - 1100px)/2)) 28px}
+.helpTopics{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:8px max(24px,calc((100vw - 1100px)/2)) 28px}
+.helpA a{color:var(--h-blue);font-weight:700}
+.helpA a:hover{text-decoration:underline}
 .helpTopic{display:grid;gap:8px;padding:18px 16px;background:#fff;border:1px solid #d9e2ef;border-radius:14px;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
 .helpTopic:hover{border-color:#b7d2f7;transform:translateY(-2px);box-shadow:0 14px 28px #1a335512}
 .helpTopic b{font-size:14px;color:var(--h-ink)}
@@ -794,6 +806,7 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 .helpGhost{color:#9ec0ff;font-size:13px;font-weight:700}
 .helpGhost:hover{color:#fff}
 .srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@media(max-width:1100px){.helpTopics{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:980px){.helpTopics{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
   .helpHero{padding:52px 20px 24px}
@@ -803,6 +816,41 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
   .helpCtaActions{align-items:flex-start}
 }
 @media(prefers-reduced-motion:reduce){.helpA{transition:none}.helpTopic{transition:none}}
+
+.helpDoc{padding:40px max(24px,calc((100vw - 860px)/2)) 20px}
+.helpDocBack{display:inline-block;margin:0 0 18px;font-size:13px;font-weight:700;color:var(--h-muted)}
+.helpDocBack:hover{color:var(--h-blue)}
+.helpDoc h1{margin:0;font-size:clamp(30px,3.8vw,44px);line-height:1.1;letter-spacing:-1.2px;font-weight:800}
+.helpDocLead{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--h-muted);max-width:640px}
+.helpDocNote{margin:28px 0 8px;padding:16px 18px;border-radius:14px;background:#eef4ff;border:1px solid #c9dcff}
+.helpDocNote b{display:block;margin-bottom:6px;font-size:13px;color:var(--h-ink)}
+.helpDocNote p{margin:0;font-size:14px;line-height:1.55;color:#405168}
+.helpDocSteps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:36px;counter-reset:helpstep}
+.helpDocStep{display:grid;gap:18px;padding:24px;background:#fff;border:1px solid #d9e2ef;border-radius:18px}
+.helpDocStepCopy{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.helpDocStepNum{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#005EFF;color:#fff;font-weight:800;font-size:16px}
+.helpDocStep h2{margin:4px 0 10px;font-size:22px;letter-spacing:-.4px;line-height:1.25}
+.helpDocStep p{margin:0 0 10px;font-size:15px;line-height:1.6;color:var(--h-muted)}
+.helpDocStep p:last-child{margin-bottom:0}
+.helpDocStep b{color:var(--h-ink);font-weight:750}
+.helpDocCode{margin:12px 0!important}
+.helpDocCode code{display:block;padding:12px 14px;border-radius:12px;background:#0b1c36;color:#d7e7ff;font-size:12px;line-height:1.45;word-break:break-all}
+.helpDocShots{display:grid;gap:14px}
+.helpDocShot{margin:0;background:#f4f7fb;border:1px solid #e1e8f2;border-radius:14px;overflow:hidden}
+.helpDocShot img{display:block;width:100%;height:auto;background:#fff}
+.helpDocShot figcaption{padding:10px 14px;font-size:12px;font-weight:700;color:#5f6f86;border-top:1px solid #e1e8f2}
+.helpDocAfter{margin:36px 0 20px;padding:24px;background:#fff;border:1px solid #d9e2ef;border-radius:18px}
+.helpDocAfter h2{margin:0 0 12px;font-size:22px}
+.helpDocAfter ul{margin:0 0 18px;padding-left:18px;display:grid;gap:8px;color:var(--h-muted);font-size:15px;line-height:1.55}
+.helpDocLinks{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+@media(max-width:760px){
+  .helpDoc{padding:28px 20px 12px}
+  .helpDocStep{padding:18px}
+  .helpDocStepCopy{grid-template-columns:36px 1fr;gap:10px}
+  .helpDocStepNum{width:36px;height:36px;font-size:14px;border-radius:10px}
+  .helpDocStep h2{font-size:19px}
+  .helpDocCode code{font-size:11px}
+}
 
 /* Help centre page END */
 
@@ -881,3 +929,41 @@ body.videoOpen>main{filter:blur(14px);transform:scale(1.01);transition:filter .2
 @media(max-width:760px){.legalHero{padding:56px 20px 20px}.legalBody{padding:8px 20px 64px}}
 
 /* Legal placeholder pages END */
+
+/* System status page */
+.statusPage{--h-blue:#005EFF;--h-ink:#0f1b2d;--h-muted:#5f6f86;background:#f4f7fb;color:var(--h-ink);min-height:100vh}
+.statusHero{padding:72px max(24px,calc((100vw - 900px)/2)) 28px;background:
+  radial-gradient(900px 420px at 12% -10%,#d7e7ff 0%,transparent 55%),
+  radial-gradient(700px 380px at 92% 0%,#e8f0ff 0%,transparent 50%),
+  #f4f7fb}
+.statusBrand{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--h-blue)}
+.statusHero h1{margin:0;font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-1.5px;font-weight:800;max-width:720px}
+.statusHero h1 em{font-style:normal;color:var(--h-blue)}
+.statusHero>p{margin:16px 0 0;font-size:17px;line-height:1.65;color:var(--h-muted);max-width:560px}
+.statusBanner{margin:28px 0 0;display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#0d6b3a}
+.statusBanner i{width:10px;height:10px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 4px #16a34a22;flex:none}
+.statusList{padding:12px max(24px,calc((100vw - 900px)/2)) 40px}
+.statusListHead h2{margin:0;font-size:22px;letter-spacing:-.4px}
+.statusListHead p{margin:8px 0 0;font-size:15px;color:var(--h-muted)}
+.statusList ul{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid #d9e2ee}
+.statusList li{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid #d9e2ee}
+.statusList li>div{display:grid;gap:4px;min-width:0}
+.statusList li b{font-size:16px;letter-spacing:-.2px}
+.statusList li span{font-size:14px;line-height:1.5;color:var(--h-muted)}
+.statusList li em{display:inline-flex;align-items:center;gap:8px;font-style:normal;font-size:13px;font-weight:700;color:#0d6b3a;white-space:nowrap}
+.statusList li em i{width:8px;height:8px;border-radius:50%;background:#16a34a;flex:none}
+.statusHelp{margin:8px max(24px,calc((100vw - 900px)/2)) 72px;padding:28px 0 0;border-top:1px solid #d9e2ee;display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
+.statusHelp h2{margin:0;font-size:22px;letter-spacing:-.4px}
+.statusHelp p{margin:8px 0 0;font-size:15px;line-height:1.6;color:var(--h-muted);max-width:480px}
+.statusHelpActions{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex:none}
+.statusGhost{font-size:14px;font-weight:650;color:var(--h-blue)}
+.statusGhost:hover{text-decoration:underline}
+@media(max-width:760px){
+  .statusHero{padding:52px 20px 24px}
+  .statusList{padding:8px 20px 28px}
+  .statusList li{flex-direction:column;align-items:flex-start;gap:10px}
+  .statusHelp{margin:0 20px 56px;padding-top:24px;flex-direction:column;align-items:flex-start}
+  .statusHelpActions{align-items:flex-start}
+}
+
+/* System status page END */
